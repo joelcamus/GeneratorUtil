@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="h1NifNieCif">Generador de NIF, NIE, CIF</h1>
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="h2NifNieCif">Generar NIF</h2>
+      <div *ngFor="let formNifNieCif of arrayformNifNieCif" class="divLabelNifNieCif"
+        (click)="copyInputMessage(formNifNieCif.nif)">
+        <label class="labelNifNieCif" for="generarNIF">{{formNifNieCif.nif}}</label>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h2 class="h2NifNieCif">Generar NIE</h2>
+      <div *ngFor="let formNifNieCif of arrayformNifNieCif" class="divLabelNifNieCif"
+        (click)="copyInputMessage(formNifNieCif.nie)">
+        <label class="labelNifNieCif" for="generarNIE">{{formNifNieCif.nie}}</label>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h2 class="h2NifNieCif">Generar CIF</h2>
+      <div *ngFor="let formNifNieCif of arrayformNifNieCif" class="divLabelNifNieCif"
+        (click)="copyInputMessage(formNifNieCif.cif)">
+        <label class="labelNifNieCif" for="generarCIF">{{formNifNieCif.cif}}</label>
+      </div>
+    </div>
+  </div>
+</div>
