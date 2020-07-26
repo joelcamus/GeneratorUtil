@@ -32,7 +32,7 @@ jobs:
           npm i
           npm run build:prod
       - name: Push Build to Releases
-        uses: joelcamus/release-action@v1
+        uses: joelcamus/GeneratorUtil@v1.0
         with:
           artifacts: "dist/angular-githubaction/*"
           token: ${{ secrets.TOKEN }}
