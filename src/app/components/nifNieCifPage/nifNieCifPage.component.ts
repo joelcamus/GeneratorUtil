@@ -11,7 +11,7 @@ import { LoggerService } from '../../logger/loggerService.service';
   styleUrls: ['./nifNieCifPage.component.css']
 })
 export class NifNieCifPageComponent implements OnInit, OnChanges {
-  limit = 9;
+  limit = 5;
 
   arrayformNifNieCif?: Array<FormNifNieCif> = new Array<FormNifNieCif>();
 
@@ -20,14 +20,24 @@ export class NifNieCifPageComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.generateForm();
+  }
+
+
+  ngOnChanges(): void {
+  }
+
+  /*
+   *Generate form
+   */
+  generateForm(): void {
+    this.arrayformNifNieCif = new Array<FormNifNieCif>();
     // Generator NIF, NIE, CIF
     for (let i = 1; i <= this.limit; i++) {
       this.arrayformNifNieCif.push(new FormNifNieCif(Utils.generateNIF(), Utils.generateNIE(), Utils.generateCIF()));
     }
   }
 
-  ngOnChanges(): void {
-  }
 
   /*
    * Method that copies to clipboard.
@@ -35,6 +45,10 @@ export class NifNieCifPageComponent implements OnInit, OnChanges {
   copyInputMessage(valueS: string): void {
     navigator.clipboard.writeText(valueS);
     LoggerService.log('Copy NIF/NIE/CIF --> ' + valueS);
+  }
+
+  refresh(): void {
+    this.generateForm();
   }
 
 }
