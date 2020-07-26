@@ -2,9 +2,9 @@ name: Build project GeneratorUtil
 
 on:
   push:
-    branches: [ master ]
+    branches: [ branchestestWorkflows ]
   pull_request:
-    branches: [ master ]
+    branches: [ branchestestWorkflows ]
 
 jobs:
   build:
