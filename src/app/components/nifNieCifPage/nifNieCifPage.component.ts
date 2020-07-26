@@ -3,6 +3,8 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { Utils } from '../../utils/utils.util';
 import { FormNifNieCif } from '../../forms/nifNieCif/formNifNieCif.form';
 
+import { LoggerService } from '../../logger/loggerService.service';
+
 @Component({
   selector: 'app-nifNieCif-page',
   templateUrl: './nifNieCifPage.component.html',
@@ -32,6 +34,7 @@ export class NifNieCifPageComponent implements OnInit, OnChanges {
    */
   copyInputMessage(valueS: string): void {
     navigator.clipboard.writeText(valueS);
+    LoggerService.log('Copy NIF/NIE/CIF --> ' + valueS);
   }
 
 }

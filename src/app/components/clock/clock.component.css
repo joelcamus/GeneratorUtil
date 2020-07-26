@@ -1,0 +1,34 @@
+.clock {
+  float: right;
+  display: grid;
+  grid-gap: 1px 5px;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+
+.hours {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.divHours {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: baseline;
+}
+
+span {
+  color: #777777;
+}
+
+.myHour {
+  font-weight: bold;
+
+}

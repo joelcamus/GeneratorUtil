@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClockComponent } from './components/clock/clock.component';
+import { SecondService } from './components/clock/secondService.service';
 import { HomePageComponent } from './components/homePage/homePage.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage.component';
@@ -12,6 +14,7 @@ import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage
 @NgModule({
   declarations: [
     AppComponent,
+    ClockComponent,
     HomePageComponent,
     NifNieCifPageComponent,
     MenuComponent
@@ -22,7 +25,7 @@ import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ MenuComponent, NifNieCifPageComponent],
+  providers: [MenuComponent, NifNieCifPageComponent, SecondService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
