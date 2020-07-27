@@ -2,9 +2,9 @@ name: Build project GeneratorUtil
 
 on:
   push:
-    branches: [ master ]
+    branches: [ branchestestWorkflows ]
   pull_request:
-    branches: [ master ]
+    branches: [ branchestestWorkflows ]
 
 jobs:
   build:
@@ -14,12 +14,21 @@ jobs:
         node-version: [12.x]
 
     steps:
+      - uses: actions/checkout@v1
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: npm install and npm run build
         run: |
-          npm i
-          npm run build:prod
-      - name: Push Build to Releases
-        uses: joelcamus/GeneratorUtil@v1.0
-        with:
-          artifacts: "dist/angular-githubaction/*"
-          token: ${{ secrets.TOKEN }}
+          npm install
+          npm run build --prod
