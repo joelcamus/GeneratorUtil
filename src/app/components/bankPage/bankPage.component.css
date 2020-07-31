@@ -1,0 +1,31 @@
+.h1Bank {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.h2Bank {
+  margin: 7%;
+  text-align: center;
+}
+
+.divLabelBank {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #d3d3d3;
+  margin: 5%;
+}
+
+.labelBank {
+  margin-top: .5rem;
+}
+
+.button {
+  text-align: center;
+}
+
+
+.sizeImgCreditCard {
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+}

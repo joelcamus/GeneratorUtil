@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit, OnChanges {
   constructor() {
     this.iconsMenu.push(new IconsMenu('home', 'fa-fw fa-home', 'Inicio', true));
     this.iconsMenu.push(new IconsMenu('nifNieCif', 'fa-id-card', 'NIF, NIE, CIF', false));
+    this.iconsMenu.push(new IconsMenu('bank', 'fa-credit-card', 'Datos bancarios', false));
   }
 
   @HostListener('click', ['$event']) onClick(event): void {

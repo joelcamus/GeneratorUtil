@@ -10,6 +10,7 @@ import { SecondService } from './components/clock/secondService.service';
 import { HomePageComponent } from './components/homePage/homePage.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage.component';
+import { BankPageComponent } from './components/bankPage/bankPage.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage
     ClockComponent,
     HomePageComponent,
     NifNieCifPageComponent,
+    BankPageComponent,
     MenuComponent
   ],
   imports: [
@@ -25,7 +27,7 @@ import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [MenuComponent, NifNieCifPageComponent, SecondService],
+  providers: [MenuComponent, NifNieCifPageComponent, BankPageComponent, SecondService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

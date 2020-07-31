@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 class="h1Bank">Generador de datos bancarios</h1>
+    <div class="row">
+        <div class="col-sm">
+            <h2 class="h2Bank">Generar datos de cuenta bancaria (IBAN)</h2>
+            <div *ngFor="let formBank of arrayFormBank" class="divLabelBank" (click)="copyInputMessage(formBank.IBAN)">
+                <label class="labelBank" for="IBAN">{{formBank.IBAN}}</label>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2 class="h2Bank">Generar número de tarjetas de credito</h2>
+            <div *ngFor="let formBank of arrayFormBank" class="divLabelBank"
+                (click)="copyInputMessage(formBank.creditCardNumber)">
+                <img src="assets/static/icons/bank/iconfinder_{{formBank.imageCreditCard}}.svg"
+                    class="sizeImgCreditCard">
+                <label class="labelBank" for="creditCardNumber">{{formBank.creditCardNumber}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button type="button" id="buttonRefresh" class="btn btn-info" (click)="refresh()">Refrescar
+        </button>
+    </div>
+</div>

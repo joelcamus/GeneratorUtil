@@ -11,8 +11,9 @@ export class Utils {
   private static CIF_REGEX = /^([ABCDEFGHJKLMNPQRSUVW])(\d{7})([0-9A-J])$/;
   private static CIF_REGEX_WITHOUT_CODE_CONTROL = /^([ABCDEFGHJKLMNPQRSUVW])(\d{7})$/;
 
-  private static arrayCif?: Array<TypeCif> = new Array<TypeCif>();
-  private static arrayCodeProvinceCif?: Array<CodeProvinceCif> = new Array<CodeProvinceCif>();
+  private static arrayCif: Array<TypeCif> = new Array<TypeCif>();
+  private static arrayCodeProvinceCif: Array<CodeProvinceCif> = new Array<CodeProvinceCif>();
+
 
 
   constructor() {
@@ -145,6 +146,8 @@ export class Utils {
   }
 
 
+
+
   /**
    * generateNIF:string
    */
@@ -203,7 +206,7 @@ export class Utils {
         }
         break;
       case (4):
-        const letter: string = Utils.getArrayCif()[Math.floor(Math.random() * (Utils.getArrayCif().length - 1 - 0)) + 0].letter;
+        const letter: string = Utils.getArrayCif()[Math.floor(Math.random() * (Utils.getArrayCif().length - 0)) + 0].letter;
         const code: string = Utils.getArrayCodeProvinceCif()[Math.floor(Math.random() *
           (Utils.getArrayCodeProvinceCif().length - 1 - 0)) + 0].code;
         const numberCif: string = String(Math.floor(Math.random() * (99999 - 10000)) + 10000);
@@ -350,6 +353,5 @@ export class Utils {
       return control === controlDigitS || control === controlLetter;
     }
   }
-
 
 }
