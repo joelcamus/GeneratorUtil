@@ -11,7 +11,7 @@
             <h2 class="h2Bank">Generar número de tarjetas de credito</h2>
             <div *ngFor="let formBank of arrayFormBank" class="divLabelBank"
                 (click)="copyInputMessage(formBank.creditCardNumber)">
-                <img src="assets/static/icons/bank/iconfinder_{{formBank.imageCreditCard}}.svg"
+                <img src="assets/static/icons/bank/creditCard/imageCreditCard_{{formBank.imageCreditCard}}.svg"
                     class="sizeImgCreditCard">
                 <label class="labelBank" for="creditCardNumber">{{formBank.creditCardNumber}}</label>
             </div>
