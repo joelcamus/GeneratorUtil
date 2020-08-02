@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, ElementRef } from '@angular/core';
 
 import { BankUtils } from '../../utils/bankUtils.utils';
 import { FormBank } from '../../forms/bank/formBank.form';
@@ -11,8 +11,10 @@ import { LoggerService } from '../../logger/loggerService.service';
     styleUrls: ['./bankPage.component.css']
 })
 export class BankPageComponent implements OnInit, OnChanges {
-    limit = 5;
+    @ViewChild('copiadoDiv', { static: true })
+    copiadoDiv: ElementRef;
 
+    limit = 5;
     arrayFormBank?: Array<FormBank> = new Array<FormBank>();
 
 
@@ -48,10 +50,26 @@ export class BankPageComponent implements OnInit, OnChanges {
      */
     copyInputMessage(valueS: string): void {
         navigator.clipboard.writeText(valueS);
+        this.getMessageCopy(valueS);
     }
 
     refresh(): void {
         this.generateForm();
+    }
+
+    /**
+     * display copied content
+     */
+    getMessageCopy(valueS: string): void {
+        this.copiadoDiv.nativeElement.textContent = 'Valor copiado --> ' + valueS;
+        this.copiadoDiv.nativeElement.classList.remove('hide');
+        this.copiadoDiv.nativeElement.classList.add('show');
+        // In 3 seconds the div will be hidden
+        setTimeout(() => {
+            this.copiadoDiv.nativeElement.textContent = '';
+            this.copiadoDiv.nativeElement.classList.remove('show');
+            this.copiadoDiv.nativeElement.classList.add('hide');
+        }, 3000);
     }
 
 }
