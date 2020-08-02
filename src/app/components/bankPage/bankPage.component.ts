@@ -11,8 +11,8 @@ import { LoggerService } from '../../logger/loggerService.service';
     styleUrls: ['./bankPage.component.css']
 })
 export class BankPageComponent implements OnInit, OnChanges {
-    @ViewChild('copiadoDiv', { static: true })
-    copiadoDiv: ElementRef;
+    @ViewChild('messageDiv', { static: true })
+    messageDiv: ElementRef;
 
     limit = 5;
     arrayFormBank?: Array<FormBank> = new Array<FormBank>();
@@ -61,14 +61,16 @@ export class BankPageComponent implements OnInit, OnChanges {
      * display copied content
      */
     getMessageCopy(valueS: string): void {
-        this.copiadoDiv.nativeElement.textContent = 'Valor copiado --> ' + valueS;
-        this.copiadoDiv.nativeElement.classList.remove('hide');
-        this.copiadoDiv.nativeElement.classList.add('show');
+        this.messageDiv.nativeElement.textContent = 'Valor copiado --> ' + valueS;
+        this.messageDiv.nativeElement.classList.remove('hide');
+        this.messageDiv.nativeElement.classList.add('show');
+        this.messageDiv.nativeElement.classList.add('alert');
+        this.messageDiv.nativeElement.classList.add('alert-success');
         // In 3 seconds the div will be hidden
         setTimeout(() => {
-            this.copiadoDiv.nativeElement.textContent = '';
-            this.copiadoDiv.nativeElement.classList.remove('show');
-            this.copiadoDiv.nativeElement.classList.add('hide');
+            this.messageDiv.nativeElement.textContent = '';
+            this.messageDiv.nativeElement.classList = [];
+            this.messageDiv.nativeElement.classList.add('hide');
         }, 3000);
     }
 
