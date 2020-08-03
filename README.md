@@ -2,10 +2,8 @@
 
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-Es un proyecto de prueba generado con typescript y angular.
+This is my personal project was generated with  with [Angular](https://angular.io/), [Typescript](https://www.typescriptlang.org/) y [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
 ## Development server
 
