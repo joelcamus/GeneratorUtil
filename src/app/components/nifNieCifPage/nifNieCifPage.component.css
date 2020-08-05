@@ -22,3 +22,12 @@
 .button {
   text-align: center;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  text-align: center;
+  display: block;
+}
