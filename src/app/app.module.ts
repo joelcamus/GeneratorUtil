@@ -27,7 +27,12 @@ import { BankPageComponent } from './components/bankPage/bankPage.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [MenuComponent, NifNieCifPageComponent, BankPageComponent, SecondService],
+  providers: [
+    MenuComponent,
+    NifNieCifPageComponent,
+    BankPageComponent,
+    SecondService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
