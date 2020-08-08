@@ -1,7 +1,5 @@
 <div class="left">
   <div class="item" *ngFor="let icon of iconsMenu" [ngClass]="{'red':icon.active === true }" id="{{icon.id}}">
-    <a href="{{icon.href}}" class="menu">
-      <i class="fas {{icon.icon}}"></i>{{icon.value}}
-    </a>
+    <i class="fas {{icon.icon}}"></i>{{icon.value}}
   </div>
 </div>

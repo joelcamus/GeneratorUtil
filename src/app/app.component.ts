@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Generator Util';
+  page = 'home';	
+  getPage($event: string): void {	
+    this.page = $event;	
+  }	
+
 }
