@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SecondService, ValueClock } from './secondService.service';
+import { SecondService } from './secondService.service';
+import { ValueClock } from '../../models/clock/valueClock.model';
 import { Observable } from 'rxjs';
 
 @Component({
