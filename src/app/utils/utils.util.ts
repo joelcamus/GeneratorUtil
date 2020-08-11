@@ -278,6 +278,7 @@ export class Utils {
       }
     } else if (Utils.CIF_REGEX_WITHOUT_CODE_CONTROL.test(valueUpper)) {
       const match = valueUpper.match(Utils.CIF_REGEX_WITHOUT_CODE_CONTROL);
+      let letter: string = match[1];
       const numero: string = match[2];
       let evenSum = 0;
       let oddSum = 0;
@@ -298,10 +299,19 @@ export class Utils {
       }
       const controlDigit = (10 - Number((evenSum + oddSum).toString().substr(-1)));
       const controlLetter = 'JABCDEFGHI'.substr(controlDigit, 1);
+      
       if (valueUpper == null || valueUpper === undefined || controlLetter == null || controlLetter === undefined) {
         return null;
       } else {
-        return valueUpper + controlLetter;
+        // Control must be a digit
+        if (letter.match(/[ABEH]/)) {
+          valueUpper + (controlDigit);
+          // Control must be a letter
+        } else if (letter.match(/[KPQS]/)) {
+          return valueUpper + controlLetter;
+        } else {
+          return valueUpper + controlLetter;
+        }
       }
 
     }
