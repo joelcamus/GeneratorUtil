@@ -352,16 +352,15 @@ export class Utils {
 
     // Control must be a digit
     if (letter.match(/[ABEH]/)) {
-      return control === controlDigitS;
-
+      valid = control === controlDigitS;
       // Control must be a letter
     } else if (letter.match(/[KPQS]/)) {
-      return control === controlLetter;
-
+      valid = control === controlLetter;
       // Can be either
     } else {
-      return control === controlDigitS || control === controlLetter;
+      valid = control === controlDigitS || control === controlLetter;
     }
+    return valid;
   }
-
+  
 }
