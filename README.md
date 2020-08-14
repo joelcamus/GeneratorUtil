@@ -4,10 +4,18 @@
 
 This is my personal project was generated with  with [Angular](https://angular.io/), [Typescript](https://www.typescriptlang.org/) y [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
+## Developing 
+
+#### Local development environment
+
+1. [Clone this repo](https://help.github.com/en/articles/cloning-a-repository) with git.
+2. Install dependencies by running `npm install` within the directory that you cloned (probably `generatorutil`).
+3. Start the development server with `npm start` or `npm run ng serve`.
+4. Open development site by going to [`http://localhost:4200`](http://localhost:4200) in your browser.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to  [`http://localhost:4200`](http://localhost:4200) . The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
