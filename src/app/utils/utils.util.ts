@@ -321,6 +321,8 @@ export class Utils {
    * Validate CIF
    */
   public static validateCIF(cif: string): boolean {
+    
+    let valid: boolean = false;
     const match = cif.match(Utils.CIF_REGEX);
     const letter: string = match[1];
     const numero: string = match[2];
