@@ -2,17 +2,11 @@ import { Injectable } from '@angular/core';
 import { timer, Observable, Subject } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
+import { ValueClock } from '../../models/clock/ValueClock.model';
+
 @Injectable({
   providedIn: 'root'
 })
-export class ValueClock {
-  hour: number;
-  minutes: string;
-  ampm: string;
-  day: string;
-  date: string;
-  seconds: string;
-}
 export class SecondService {
   clock: Observable<Date>;
   infofecha$ = new Subject<ValueClock>();
@@ -25,7 +19,7 @@ export class SecondService {
 
 
   constructor() {
-    this.clock = timer(0, 1000).pipe(map(t => new Date()), shareReplay(1));
+    this.clock = timer(0, 1000).pipe(map(() => new Date()), shareReplay(1));
 
   }
   getInfoClock(): Observable<ValueClock> {

@@ -25,7 +25,7 @@ export class BankUtils {
     // generate IBAN
     const iban: string = BankUtils.generateCD2IBAN(ccc, 'ES');
     // return IBAN
-    return iban + ccc;
+    return iban;
   }
 
   /**
@@ -97,8 +97,8 @@ export class BankUtils {
       let aux: string;
       let cNext: number;
       let tmp: number;
-      ccc = ccc + String(codeCountry.charCodeAt(0) - 55) + String(codeCountry.charCodeAt(1) - 55) + '00';
-      tmp = parseInt(ccc.substring(0, 9), 10) % 97;
+      let cccAux = ccc + String(codeCountry.charCodeAt(0) - 55) + String(codeCountry.charCodeAt(1) - 55) + '00';
+      tmp = parseInt(cccAux.substring(0, 9), 10) % 97;
       if (tmp < 10) {
         aux = '0';
       }
@@ -106,20 +106,20 @@ export class BankUtils {
         aux = '';
       }
       aux = aux + String(tmp);
-      ccc = ccc.substring(9);
-      while (ccc !== '') {
+      cccAux = cccAux.substring(9);
+      while (cccAux !== '') {
         if (parseInt(aux, 10) < 10) {
           cNext = 8;
         } else {
           cNext = 7;
         }
-        if (ccc.length < cNext) {
-          aux = aux + ccc;
-          ccc = '';
+        if (cccAux.length < cNext) {
+          aux = aux + cccAux;
+          cccAux = '';
         }
         else {
-          aux = aux + ccc.substring(0, cNext);
-          ccc = ccc.substring(cNext);
+          aux = aux + cccAux.substring(0, cNext);
+          cccAux = cccAux.substring(cNext);
         }
         tmp = parseInt(aux, 10) % 97;
         if (tmp < 10) {
