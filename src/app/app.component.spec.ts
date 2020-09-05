@@ -26,10 +26,22 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Generator Util');
   });
 
-  it('should render title', () => {
+  it('should create', () => {
+    expect(AppComponent).toBeTruthy();
+  });
+
+  it('should create app-menu', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Generator Util app is running!');
+    expect(compiled.querySelector('app-menu')).toBeDefined();
   });
+
+  it('should create app-clock', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('app-clock')).toBeDefined();
+  });
+
 });
