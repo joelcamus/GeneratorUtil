@@ -11,6 +11,7 @@ import { HomePageComponent } from './components/homePage/homePage.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage.component';
 import { BankPageComponent } from './components/bankPage/bankPage.component';
+import { LicensePlatePageComponent } from './components/licensePlatePage/licensePlatePage.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BankPageComponent } from './components/bankPage/bankPage.component';
     HomePageComponent,
     NifNieCifPageComponent,
     BankPageComponent,
+    LicensePlatePageComponent,
     MenuComponent
   ],
   imports: [
@@ -31,6 +33,7 @@ import { BankPageComponent } from './components/bankPage/bankPage.component';
     MenuComponent,
     NifNieCifPageComponent,
     BankPageComponent,
+    LicensePlatePageComponent,
     SecondService
   ],
   bootstrap: [AppComponent]

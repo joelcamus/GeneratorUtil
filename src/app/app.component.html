@@ -1,8 +1,8 @@
 <app-menu (page)="getPage($event)"></app-menu>
 <app-clock class="clockRight"></app-clock>
-<app-home-page *ngIf="page=='home'"></app-home-page>	
-<app-nifNieCif-page *ngIf="page=='nifNieCif'"></app-nifNieCif-page>	
-<app-bank-page *ngIf="page=='bank'"></app-bank-page>	
-
+<app-home-page *ngIf="page=='home'"></app-home-page>
+<app-nifNieCif-page *ngIf="page=='nifNieCif'"></app-nifNieCif-page>
+<app-bank-page *ngIf="page=='bank'"></app-bank-page>
+<app-license-plate-page *ngIf="page=='licensePlate'"></app-license-plate-page>
 
 <router-outlet></router-outlet>
