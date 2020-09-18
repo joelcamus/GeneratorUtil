@@ -1,0 +1,39 @@
+.h1LicensePlate {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.h2LicensePlate {
+  margin: 7%;
+  text-align: center;
+}
+
+.divLabelLicensePlate {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #d3d3d3;
+  margin: 5%;
+}
+
+.labelLicensePlate {
+  margin-top: .5rem;
+}
+
+.button {
+  text-align: center;
+}
+
+.sizeImgCreditCard {
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  text-align: center;
+  display: block;
+}

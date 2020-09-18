@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="h1LicensePlate">Generador de matriculas</h1>
+    <div #messageDiv class="hide"></div>
+    <div class="row">
+        <div class="col-sm">
+            <h2 class="h2LicensePlate">Generar de matriculas de coche y motos</h2>
+            <div *ngFor="let formLicensePlate of arrayFormLicensePlate" class="divLabelLicensePlate"
+                (click)="copyInputMessage(formLicensePlate.licensePlateCar)">
+                <label class="labelLicensePlate" for="licensePlateCar">{{formLicensePlate.licensePlateCar}}</label>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h2 class="h2LicensePlate">Generar matriculas de ciclomotores</h2>
+            <div *ngFor="let formLicensePlate of arrayFormLicensePlate" class="divLabelLicensePlate"
+                (click)="copyInputMessage(formLicensePlate.licensePlateScooter)">
+                <label class="labelLicensePlate"
+                    for="licensePlateScooterter">{{formLicensePlate.licensePlateScooter}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button type="button" id="buttonRefresh" class="btn btn-info" (click)="refresh()">Refrescar
+        </button>
+    </div>
+</div>
