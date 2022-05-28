@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, OnChanges, HostListener, EventEmitter } from '@angular/core';
 
 import { IconsMenu } from '../../models/iconsMenu.model';
+
+import { Utils } from '../../utils/utils.util';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -22,15 +25,17 @@ export class MenuComponent implements OnInit, OnChanges {
 
   @HostListener('click', ['$event']) onClick(event): void {
     const id: string = event.target.id;
-    for (const iconsMenu of this.iconsMenu) {
-      if (id === iconsMenu.id) {
-        for (const iconsMenu2 of this.iconsMenu) {
-          iconsMenu2.active = false;
-        }
-        iconsMenu.active = true;
-      }
-    }
-    this.page.emit(id);
+	if (!Utils.isBlank(id)) {
+		for (const iconsMenu of this.iconsMenu) {
+		  if (id === iconsMenu.id) {
+			for (const iconsMenu2 of this.iconsMenu) {
+			  iconsMenu2.active = false;
+			}
+			iconsMenu.active = true;
+		  }
+		}
+		this.page.emit(id);
+	}
   }
 
   ngOnInit(): void {
