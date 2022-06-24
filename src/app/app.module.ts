@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClockComponent } from './components/clock/clock.component';
-import { SecondService } from './components/clock/secondService.service';
+import { SecondService } from './service/clock/secondService.service';
 import { HomePageComponent } from './components/homePage/homePage.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage.component';
