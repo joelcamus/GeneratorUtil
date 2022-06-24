@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="h1NifNieCif">Validador de NIF, NIE, CIF</h1>
+    <div #copiadoDiv class="alert alert-success hide"></div>
+    <div class="row">
+        <div class="col-sm">
+            <h2 class="h2NifNieCif">NIF</h2>
+            <input type="text" class="form-control inputText" id="inputNif" #inputNif [formControl]="nif">
+        </div>
+        <div class="col-sm">
+            <h2 class="h2NifNieCif">NIE</h2>
+            <input type="text" class="form-control inputText" #inputNie  [formControl]="nie" id="inputNie" />
+        </div>
+        <div class="col-sm">
+            <h2 class="h2NifNieCif">CIF</h2>
+            <input type="text" class="form-control inputText" #inputCif  [formControl]="cif" id="inputCif" />
+        </div>
+    </div>
+    <div class="button topPadding">
+        <button type="button" id="buttonRefresh" class="btn btn-info" (click)="validate()">Validar
+        </button>
+      </div>
+</div>

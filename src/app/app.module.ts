@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { NifNieCifPageComponent } from './components/nifNieCifPage/nifNieCifPage.component';
 import { BankPageComponent } from './components/bankPage/bankPage.component';
 import { LicensePlatePageComponent } from './components/licensePlatePage/licensePlatePage.component';
+import { ValidateNifNifCifComponent } from './components/validate-nif-nif-cif/validate-nif-nif-cif.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { LicensePlatePageComponent } from './components/licensePlatePage/license
     NifNieCifPageComponent,
     BankPageComponent,
     LicensePlatePageComponent,
-    MenuComponent
+    MenuComponent,
+    ValidateNifNifCifComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
+
   ],
   providers: [
     MenuComponent,

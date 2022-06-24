@@ -365,4 +365,8 @@ export class Utils {
     return valid;
   }
   
+  public static isBlank(value: string): boolean {
+    return value===undefined || value===''  ||value.trim()==='';
+  }
+
 }
