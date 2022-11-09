@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync as  } from '@angular/core/testing';
 
 import { NifNieCifPageComponent } from './nifNieCifPage.component';
 describe('NifNieCifPageComponent', () => {
   let component: NifNieCifPageComponent;
   let fixture: ComponentFixture<NifNieCifPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [NifNieCifPageComponent]
     })

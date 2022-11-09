@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync as  } from '@angular/core/testing';
 
 import { LicensePlatePageComponent } from './licensePlatePage.component';
 
@@ -6,7 +6,7 @@ describe('LicensePlatePageComponent', () => {
     let component: LicensePlatePageComponent;
     let fixture: ComponentFixture<LicensePlatePageComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [LicensePlatePageComponent]
         })
